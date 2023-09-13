@@ -1,0 +1,643 @@
+
+/* Typography */
+/* // End typography */
+
+
+/*--Resets --*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, 
+cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figure, figcaption, hgroup, menu, footer, header, nav, section, summary, time, mark, audio, video {margin: 0; padding: 0; border: 0; }
+ul{list-style: none;}
+article, aside, canvas, figure, figure img, figcaption, hgroup, footer, header, nav, section, audio, video{display: block;}
+blockquote, q{quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after{content: ''; content: none;}
+table{border-collapse: collapse; border-spacing: 0;}
+b, strong{font-weight: bold;}
+[type="checkbox"], [type="radio"]{box-sizing: border-box; padding: 0;}
+[type="search"]{-webkit-appearance: textfield; outline-offset: -2px;}
+[type="search"]::-webkit-search-decoration{-webkit-appearance: none;}
+::-webkit-file-upload-button{-webkit-appearance: button; font: inherit;}
+
+.clear:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}
+a img{border:0; width: auto; height: auto; max-width: 100%; vertical-align: bottom; border-style: none;}
+a,input,select,textarea{outline:none;}
+img{width: auto; height: auto; max-width: 100%; vertical-align: bottom; border-style: none;}
+
+/* Selection colours (easy to forget) */
+img::selection{background: transparent;}
+img::-moz-selection{background: transparent;}
+a{text-decoration: none; display: inline-block;}
+
+input[type='number']{-moz-appearance:textfield;}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{-webkit-appearance: none;}
+input::-moz-focus-inner{border:0; padding: 0; }
+input:invalid,
+input:required{box-shadow: none;}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration{display: none;}
+input:required { box-shadow:none; }
+input::-moz-focus-inner{box-shadow:0 0 0px transparent;}
+input[type="text"],input[type="email"],input[type="tel"],input[type="search"],input[type="number"],input[type="submit"],input[type="password"],select,textarea{-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+
+
+a img{border:0; width: auto; height: auto; max-width: 100%; vertical-align: bottom; border-style: none; -webkit-perspective: 0; perspective: 0; -webkit-backface-visibility: hidden; -webkit-transform: translate3d(0,0,0); visibility: visible; backface-visibility: hidden;}
+img{width: auto; height: auto; max-width: 100%; vertical-align: bottom; border-style: none; -webkit-perspective: 0; perspective: 0; -webkit-backface-visibility: hidden; -webkit-transform: translate3d(0,0,0); visibility: visible; backface-visibility: hidden;}
+
+/* ===================================================================================================
+
+Default Layout
+Font property css
+font:font-style font-variant font-weight font-size/line-height font-family|caption|icon|menu|message-box|small-caption|status-bar|initial|inherit;
+*/
+*{-webkit-box-sizing: border-box;-moz-box-sizing:border-box; box-sizing: border-box;}
+html {height: 100%;max-height: 100%;min-height: 100%; overflow: hidden;overflow-y: scroll;}
+body{background: var(--white); -webkit-text-size-adjust: 100%; -moz-text-size-adjust:100%; -moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased; font-size: 15px; line-height: normal; font-family: var(--noto-sans); font-weight: normal;}
+
+
+/* color code name */
+
+:root{
+	--white: #ffffff;
+	--black: #000000;
+    --Festive-Bordeaux:#6E0F11;
+    --Peach-Cloud:#FCE3D8;
+    --Bright-Orange:#FF6C30;
+    --Star-and-Crescent-Red:#C22121;
+    --Dark-Grey:#363636;
+
+    --Noto-sans: 'Noto Sans', sans-serif;
+
+}
+
+
+/* color code name */
+
+
+/* Global style */
+h1, h2, h3, h4, h5, h6{}
+
+h1{font-family: var(--Noto-sans); font-size: 30px; font-style: normal; font-weight: 500; line-height: normal; color: var(--Festive-Bordeaux);}
+
+dfn, address, em{font-style: normal;}
+label, input[type="submit"]{cursor: pointer;}
+button:focus{outline: none;}
+.btn{-webkit-transition: all .4s ease-in-out; -moz-transition: all .4s ease-in-out; transition: all .4s ease-in-out; text-align: center; font-size: 16px; line-height: 16px; color: var(--white); font-family: var(--TWKLausanne550); padding: 11px 20px 9px; background-color: var(--heavy-metal); border-radius: 40px; border: 1px solid var(--heavy-metal); min-width: 198px;}
+.btn:hover{background-color: transparent; color: var(--heavy-metal);} 
+.btn-underline{font-size: 14px; line-height: 16px; text-decoration: underline; text-underline-offset: 3px; transition: .3s ease-in-out; color: var(--delta); font-family: var(--TWKLausanne550);}
+.btn-underline:hover{text-decoration: none;}
+.mobi{display: none;}
+.desk{display: block;}
+.common-wrap{max-width: 1240px; margin: 0 auto; clear: both; padding: 0 20px;}
+.centerY { position: absolute; left: 0; right: 0; text-align: center; top: 50%; width: 100%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); color: #ffffff; }
+
+/* Flex style */
+.flex-box{display: -webkit-flex; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: flex; -webkit-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-pack: justify; -moz-box-pack: justify; -ms-flex-pack: justify; -webkit-justify-content: space-between; justify-content: space-between;}
+.flex-horizontal-align{-webkit-box-pack: center; -moz-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center;}
+.flex-vertical-align{-webkit-box-align: center; align-items: center;}
+.flex-bottom-align{-webkit-box-align: flex-end; align-items: flex-end;}
+.flex-content-align{-webkit-align-content: center; -moz-align-content: center; align-content: center;}
+.order-1{-webkit-order: 1; -moz-order: 1; -ms-order: 1; order: 1;}
+.order-2{-webkit-order: 2; -moz-order: 2; -ms-order: 2; order: 2;}
+.flex{display: -webkit-flex; display: -moz-flex; display: -ms-flex; display: -o-flex; display: flex; flex-flow: row wrap;}
+/* End Flex style */
+
+section, footer, header{float: left; width: 100%; position: relative;}
+body,html{height: 100%;}
+.main-wrap{min-height: 100%; overflow: hidden; position: relative; overflow-x: hidden;}
+
+
+/* Start dektop css */
+
+/* header wrap start */
+main{overflow: hidden;}
+.header-wrap{float: left;width: 100%;background-color:var(--white) ;}
+.main-header-wrap{float: left;width: 100%;padding-top: 27px;}
+.logo-wrap{float: left;width: 204.739px;padding: 0 0 28px 12px;}
+.logo-wrap a img{float: left;width: 100%;}
+.main-nav-and-icon-wrap{float: left;width: calc(100% - 204.739px);}
+.nav-wrap{float: left;width: calc(100% - 235px)}
+.nav-wrap ul{display: flex;flex-flow: row wrap;padding: 17px 0;justify-content: end;margin-right: 86px;}
+.nav-wrap ul li{margin-left: 17px;width: auto;}
+.nav-wrap ul li a{color: #000;font-family: Inter;font-size: 14px;font-style: normal;font-weight: 400;line-height: normal;}
+.icon-wrap{width: 235px;display: flex;flex-flow: row;justify-content: space-between;padding-top: 17px;}
+.search {float: left;width: 20%;}
+.person {float: left;width: 20%;}
+.love {float: left;width: 20%;}
+.cart {float: left;width: 20%;}
+.three-line {float: left;width: 20%;}
+/* header wrap end */
+
+/* hero wrap start */
+.hero-wrap{float: left;width: 100%;background-image:url(../img/hero\ bg.png);background-repeat: no-repeat;background-size: cover;}
+.hero-item-wrap{float: left;width: 100%;}
+.hero-inner{float: left;width: 606px;}
+.main-inner{float: left;width: 119px;padding: 143px 0 59px 0;}
+.main-inner span{color: #F42020;font-family: Lato;font-size: 20px;font-style: normal;font-weight: 400;line-height: normal;}
+.main-inner img{float: left;padding-top: 6px;width: 68px;}
+.summer-wrap{float: left;width: 100%;padding-bottom: 52px;}
+.summer-wrap h1{color: #000;font-family: Lato;font-size: 55px;font-style: normal;font-weight: 400;line-height: normal;}
+.summer-wrap span{color: #000;font-family: Lato;font-size: 64px;font-style: normal;font-weight: 700;line-height: normal;}
+.main-inner-active{float: left;width: 164px;}
+.main-inner-active span{color: #000;font-family: Lato;font-size: 20px;font-style: normal;font-weight: 700;line-height: normal;}
+.main-inner-active img{float: left;width: 100px;padding-top: 6px;}
+.active{float: left;width: 100%;padding: 82px 0 130px 0;}
+.main-item{float:right; width: 100% - 606px;padding-top: 23px;}
+.main-item img{float: left; width: 100%;}
+/* hero wrap end */
+
+/* hot list wrap start*/
+.hot-list-wrap{float: left;width: 100%;background-color: white;padding: 70px 0;}
+.hot-list-inner{float: left;width: 100%;}
+.hot-list-item{width: 49%;background-color: #D9D9D9;float: left;}
+.hot-inner{float: left;width: 319px;padding: 362px 0 88px 0;margin-left: 12px;position: relative;z-index: 1;}
+.hot-inner h5{color: #000;font-family: Inter;font-size: 20px;font-style: normal;font-weight: 400;line-height: normal;}
+.hot-inner h3{color: #000;font-family: Inter;font-size: 30px;font-style: normal;font-weight: 600;line-height: normal;padding: 11px 0 18px 0;}
+.hot-inner h3 span{font-weight: 400;}
+.hot-inner img{float: left;padding-top: 9px;}
+.hot-women{float:left;width: 338px;margin-left: 250px;position: absolute;}
+.hot-women img{float: left;padding-top: 69px;z-index: 2;}
+.hot-list-man{float: left; width: 49%;margin-left: 24px;background-color: #D9D9D9;}
+.men-collection{float: left;width: 278px;padding: 106px 0 0 12px;}
+.men-collection h5{color: #000;font-family: Inter;font-size: 20px;font-style: normal;font-weight: 400;line-height: normal;}
+.men-collection h3{color: #000;font-family: Inter;font-size: 30px;font-style: normal;font-weight: 600;line-height: normal;padding: 11px 0 18px 0;}
+.men-collection h3 span{color: #000;font-family: Inter;font-size: 30px;font-style: normal;font-weight: 400;line-height: normal;}
+.men-collection img{float: left;padding-top: 9px;}
+.active-men{float: left;margin-left: 114px;padding-top: 18px;}
+.kids-collection-wrap{float: left;width: 25%;background-color: #D9D9D9;margin: 26px 26px 0 24px;}
+.main-kids{float: left;width: 269px;padding-top: 131px;margin-left: 12px;position: relative;z-index: 2;}
+.main-kids h5{color: #000;font-family: Inter;font-size: 20px;font-style: normal;font-weight: 400;line-height: normal;}
+.main-kids h3{color: #000;font-family: Inter;font-size: 30px;font-style: normal;font-weight: 600;line-height: normal;padding: 11px 0 18px 0;}
+.main-kids h3 span{font-weight: 400;}
+.main-kids img{float: left;padding: 9px 0 30px 0;}
+.kids-inner{float: right;position: absolute;width: 157px;margin-left: 143px;z-index: 1;}
+.kids-inner img{width: 100%;float: left;}
+.gift-cards-wrap{float: left;width: 21.8%;background-color: #FFEFEF;margin-top: 26px;}
+.gift-inner{float: left;padding: 125px 0 0 22px;}
+.gift-inner h3{color: #000;font-family: Inter;font-size: 20px;font-style: normal;font-weight: 600;line-height: normal;}
+.gift-inner p{color: #000;font-family: Inter;font-size: 12px;font-style: normal;font-weight: 300;line-height: normal;padding: 11px 0 21px 0;}
+.gift-inner h4{color: #000;font-family: Inter;font-size: 14px;font-style: normal;font-weight: 600;line-height: normal;}
+.gift-inner img{float: left;padding: 2px 0 57px 0;}
+/* hot list wrap end*/
+
+/* trendy products wrap start */
+.trendy-products-wrap{float: left;width: 100%;background: var(--white);}
+.main-trendy{float: left;width: 100%;padding-bottom: 31px;}
+.main-trendy h2{text-align: center;color: #000;font-family: Lato;font-size: 40px;font-style: normal;font-weight: 400;line-height: normal;}
+.main-trendy h2 span{font-weight: 700;}
+.trendy-wrap{width: 100%;float: left;position: relative;}
+.trendy-wrap ul{display: flex;flex-flow: row wrap;justify-content: center;}
+.trendy-wrap ul li{color: #000;font-family: Lato;font-size: 13px;font-style: normal;font-weight: 500;line-height: normal;margin-right: 20px;}
+.new{ position: relative;}
+.new::after{content: '';width: 59px;height: 2px;background-color: #000;position: absolute;left: 0;top: 15px;}
+.active-trend{float: left;width: 100%;padding-bottom: 50px;}
+.active-trend img{display: block;margin: 0 auto;}
+.products-item-wrap{width: 100%;display: flex;flex-flow: row wrap;justify-content: space-between;padding-top: 54px;}
+.product-inner{float: left; width: 22.2%;}
+.main-product-inner{float: left;width: 100%;background-color: #F3F3F3;}
+.jaclet{float: left;padding: 5px 16px 0 29px;}
+.t-shart{float: left;padding: 19px 12px 0 22px;}
+.cort{float: left;padding: 9px 16px 0 33px;}
+.calvin-shot{float: left;padding: 9px 15px 0 24px;}
+.review-item{float: left; width:100%;position: relative;padding-top: 18px;}
+.review-item h5{color: #000;font-family: Lato;font-size: 12px;font-style: normal;font-weight: 300;line-height: normal;}
+.active-love{float: right;width: auto;margin-top: -10px;}
+.review-item h3{color: #000;font-family: Lato;font-size: 15px;font-style: normal;font-weight: 500;line-height: normal;padding: 5px 0;}
+.review-item h4{color: #000;font-family: Lato;font-size: 13px;font-style: normal;font-weight: 500;line-height: normal;}
+.review-item h4 span{color: #F13636;margin-left: 17px;}
+.review-star{float: left;padding: 10px 7px 0 0;}
+.review-chake{color: #000;font-family: Lato;font-size: 12px;font-style: normal;font-weight: 400;line-height: normal;position: absolute;margin-top: 5px;margin-left: 7px;}
+.price{position: relative;}
+.price::before{content: '';width: 30px;height: 0.5px;background-color: #000;position: absolute;left: 0;top: 9px;}
+.cotton-jacket{float: left;padding: 0;}
+.jacket{float: left;padding: 9px 63px 0 61px;}
+.tops{float: left;padding: 6px 13px 0 28px;}
+.huddi{float: left;padding: 10px 21px 0 37px;}
+.all-product{float: left;width: 100%;padding: 42px 0 80px 0;}
+.all-product h3{ color: #000;font-family: Lato;font-size: 15px;font-style: normal;font-weight: 500;line-height: normal;text-align: center;position: relative;}
+.all-product h3::after{content: ""; width: 85px; height: 2px;background-color: #000;position: absolute;z-index: 1;top: 25px;left: 44.8%;}
+/* trendy products wrap end */
+
+/* spring collection wrap start */
+.spring-collection-wrap{float: left;width: 100%;background-image:url(../img/collection\ bg.png);background-repeat: no-repeat;background-size: cover;}
+.collection-wrap{width: 85.3%;float: left;}
+.collection-item{width: 40%;float: left;padding-top: 154px;}
+.collection-item h5{color: #EF3B3B;font-family: Lato;font-size: 14px; font-style: normal;font-weight: 400;line-height: normal;margin-left: 18.7%;position: relative;}
+.collection-item h2{color: #000;font-family: Lato;font-size: 40px;font-style: normal;font-weight: 800;line-height: normal;padding: 18px 0;}
+.collection-item h2 span{font-weight: 400;}
+.collection-item h4{color: #000; font-family: Lato; font-size: 20px; font-style: normal; font-weight: 400; line-height: normal;position: relative;}
+.collection-item h5::before{content: "";width: 59px;height: 3px;position: absolute;z-index: 1;background-color: #EF3B3B;top: 8px;left: -72px;border-radius: 3px;}
+.collection-item h4::after{content: "";width: 60px;height: 3px;background-color: #000;position: absolute;top: 25px;left: 0;border-radius: 3px;}
+.collection-time{width: 290px;float: left;padding-top: 96px;}
+.time{float: left;width: 100%;}
+.collection-time img{float: left;width: 100%;padding-top: 15px;}
+.collection-inner{float: left;width: calc(100% - 40%);}
+.collection-inner img{float: right;padding: 46px 0 34px 0;}
+/* spring collection wrap end */
+
+
+/* main contant wrap start*/
+.main-contant-wrap{float: left;width: 100%;background-color: var(--white);}
+.t-shirt-shop-item{width: 100%;padding-top: 70px;display: flex;flex-flow: row wrap;justify-content: space-between;}
+.shirt-shop-inner{float: left;width: 46.8%;background: #FF0021;}
+.women-t-shirt{float: left;width: 190px;padding: 196px 0 61px 0;margin-left: 32px;}
+.women-t-shirt h4{color: #FFF;font-family: Lato;font-size: 15px;font-style: normal;font-weight: 600;line-height: normal;}
+.women-t-shirt h3{color: #FFF;font-family: Lato;font-size: 24px;font-style: normal;font-weight: 800;line-height: normal;padding: 9px 0 15px 0;}
+.women-t-shirt span{color: #FFF;font-family: Lato;font-size: 12px;font-style: normal;font-weight: 600;line-height: normal;position: relative;}
+.women-t-shirt span::after{content: "";width: 35px;height: 2px;background-color: #ffffff;border-radius: 3px;position: absolute;left: 0;top: 15px;}
+.women-p{float: right;background-color: #FF0021;position: relative;}
+.women-p img{float: right;padding-top: 18px;}
+.women-pick{float: right;width: 100%;background-color: #FF0021; opacity: 50%;position: absolute;height: 100%;}
+.main-shop-inner{width: 46.8%;background: #ECECEC;}
+.men-t-shirt{float: left;width: 152px;padding: 196px 0 61px 0;margin-left: 32px;}
+.men-t-shirt h4{color: #000;font-family: Lato;font-size: 15px;font-style: normal;font-weight: 600;line-height: normal;}
+.men-t-shirt h3{color: #000;font-family: Lato;font-size: 24px;font-style: normal;font-weight: 800;line-height: normal;padding: 9px 0 15px 0;}
+.men-t-shirt span{color: #000;font-family: Lato;font-size: 12px;font-style: normal;font-weight: 600;line-height: normal;position: relative;}
+.men-t-shirt span::after{content: "";width: 35px;height: 2px;background-color: #000;border-radius: 3px;position: absolute;left: 0;top: 15px;}
+.main-shop-inner img{float: right;}
+.limited-head{float: left;width: 100%;padding: 64px 0 42px 0;}
+.limited-head h3{color: #000;font-family: Lato;font-size: 40px;font-style: normal;font-weight: 400;line-height: normal;text-align: center;}
+.limited-head h3 span{font-weight: 700;}
+.limited-edition-wrap{width: 100%;display: flex;flex-flow: row wrap;justify-content: space-between;}
+.limited-item{float: left; width: 22.2%;}
+.limited-edition-inner{float: left;width: 100%;background-color: #F3F3F3;}
+.leather-bag{float: left;padding: 78px 18px 69px 27px;}
+.brackcelet{float: left;padding: 32px 45px 30px 55px;}
+.cap{float: left;padding: 100px 22px 91px 28px;}
+.calvin-belt{float: left;padding: 75px 12px 76px 12px;}
+.review-inner{float: left;width: 100%;padding-top: 13px;}
+.review-inner h5{color: #000;font-family: Lato;font-size: 12px;font-style: normal;font-weight: 300;line-height: normal;}
+.review-inner h3{color: #000;font-family: Lato;font-size: 15px;font-style: normal;font-weight: 500;line-height: normal;padding: 5px 0;}
+.review-inner h4{color: #000;font-family: Lato;font-size: 13px;font-style: normal;font-weight: 500;line-height: normal;}
+.star-review{float: left;padding-top: 10px;}
+.reviews{color: #000;font-family: Lato;font-size: 12px;font-style: normal;font-weight: 400;line-height: normal;position: absolute;margin: 9px 0 0 7px;}
+.review-inner del{color: #000;font-family: Lato;font-size: 13px;font-style: normal;font-weight: 500;line-height: normal;margin-right: 18px;}
+.belt-price{color: #F13636;font-family: Lato;font-size: 13px;font-style: normal;font-weight: 500;line-height: normal;}
+.uomo-wrap{float: left;width: 100%;}
+.main-uomo-head{float: left;width: 100%;padding: 87px 0 32px 0;}
+.main-uomo-head h3{color: #000;font-family: Lato;font-size: 40px;font-style: normal;font-weight: 700;line-height: normal;text-align: center;}
+.uomo-item{float: left;width: 100%;padding-bottom: 58px;}
+.uomo-item img{float: left;width: 100%;}
+.uomo-service{width: 100%;display: flex;flex-flow: row wrap;justify-content: space-between;padding-bottom: 67px;}
+.uomo-service-item{width: 22%;}
+.uomo-cart-active{display: block;margin: auto;}
+.customer{display: block;margin: auto;}
+.many-back{display: block;margin: auto;}
+.uomo-service-item h4{color: #000;font-family: Lato;font-size: 20px;font-style: normal;font-weight: 700;line-height: normal;padding: 44px 0 12px 0;text-align: center;}
+.uomo-service-item h6{color: #000;font-family: Lato;font-size: 15px;font-style: normal;font-weight: 400;line-height: normal;text-align: center;}
+
+/* main contant wrap end*/
+
+/* footer wrap start*/
+.footer-wrap{float: left;width: 100%;background: #D9D9D9;}
+.footer-item{width: 100%;display: flex;flex-flow: row wrap;justify-content: space-between;padding: 47px 0 52px 0;}
+.footer-inner{width: 21%;}
+.footer-logp{float: left;width: 152px;padding-bottom: 25px;}
+.footer-logp a img{float: left;width: 100%;}
+.footer-inner span{color: #000;font-family: Lato;font-size: 12px;font-style: normal;font-weight: 400;line-height: normal;float: left;}
+.sale-uomo{float: left;width: 89px;padding-top: 21px;}
+.sale-uomo h4{color: #000;font-family: Lato;font-size: 12px;font-style: normal;font-weight: 400;line-height: normal;}
+.sale-uomo h5{color: #000;font-family: Lato;font-size: 12px;font-style: normal;font-weight: 400;line-height: normal;padding-top: 20px;}
+.social-media{float: left;width: 100%;}
+.social-media{float: left; padding-top: 35px;}
+.company-inner{width: 8.3%;}
+.company-inner h3{color: #000;font-family: Lato;font-size: 20px;font-style: normal;font-weight: 700;line-height: normal;}
+.company-inner ul{float: left;padding-top: 38px;}
+.company-inner ul li{float: left;padding-bottom: 15px;width: 100%;}
+.company-inner ul li a{color: #000; font-family: Lato; font-size: 12px; font-style: normal; font-weight: 400; line-height: normal;}
+.shop-inner{width: 8.3%;}
+.shop-inner h3{color: #000;font-family: Lato;font-size: 20px;font-style: normal;font-weight: 700;line-height: normal;}
+.shop-inner ul{float: left;padding-top: 38px;}
+.shop-inner ul li{float: left;padding-bottom: 15px;width: 100%;}
+.shop-inner ul li a{color: #000; font-family: Lato; font-size: 12px; font-style: normal; font-weight: 400; line-height: normal;}
+.help-inner{width: 8.3%;}
+.help-inner h3{color: #000;font-family: Lato;font-size: 20px;font-style: normal;font-weight: 700;line-height: normal;}
+.help-inner ul{float: left;padding-top: 38px;}
+.help-inner ul li{float: left;padding-bottom: 15px;width: 100%;}
+.help-inner ul li a{color: #000; font-family: Lato; font-size: 12px; font-style: normal; font-weight: 400; line-height: normal;}
+.subscribe-inner{width: 20.4%;}
+.subscribe-inner h3{color: #000;font-family: Lato;font-size: 20px;font-style: normal;font-weight: 700;line-height: normal;padding-bottom: 38px;}
+.subscribe-inner span{color: #000;font-family: Lato;font-size: 12px;font-style: normal;font-weight: 400;line-height: normal;}
+.join-email{float: left;background-color: #FFFFFF;border-radius: 2px;margin-top: 29px;}
+.join-email span{float: left;color: #000; font-family: Lato;font-size: 10px;font-style: normal;font-weight: 400;line-height: normal;padding: 6px 0 7px 10px;}
+.join-email h4{float: right;padding: 6px 13px 5px 81px;color: #000;font-family: Lato;font-size: 12px;font-style: normal;font-weight: 700;line-height: normal;}
+/* footer wrap end */
+
+/* end dektop css */
+
+/* =======================================================================================================
+============================================ Responsive style ========================================== */
+
+/*		Mobile Layout: 320px and 480px and more but less than or equal to 767px.
+----------------------------------------------------------------------------------
+*/
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    input[type="text"],input[type="email"],input[type="tel"],input[type="search"],input[type="number"],input[type="submit"],input[type="password"],select,textarea{-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+    .mobi{display: block;}
+    .desk{display: none;}
+    .main-header-wrap{float: left;width: 100%;padding-top: 15px;}
+    .logo-wrap{float: left;width:130px;margin-right: 20px;}
+    .logo-wrap a img{float: left;width: 100%;}
+    .main-nav-and-icon-wrap{float: left;width: calc(100% - 150px);}
+    .nav-wrap{float: left;width: calc(100% - 150px)}
+    .nav-wrap ul{display: flex;flex-wrap: nowrap; padding: 10px 0;margin-top: 30px;justify-content: space-around;}
+    .nav-wrap ul li{margin-left: 7px;width:auto;}
+    .nav-wrap ul li a{color: #000;font-family: Inter;font-size: 10px;font-style: normal;font-weight: 300;line-height: normal;}
+    .icon-wrap{width: 150px;display: flex;flex-flow: row;justify-content: space-between;padding-top: 5px;}
+    .search {float: left;width: 15%;}
+    .person {float: left;width: 15%;}
+    .love {float: left;width: 15%;}
+    .cart {float: left;width: 15%;}
+    .three-line {float: left;width: 15%;}
+    .hero-wrap{float: left;width: 100%;background-image:url(../img/hero\ bg.png);background-repeat: no-repeat;background-size: cover;}
+    .hero-inner{float: left;width: 100%;}
+    .main-inner{float: left;width: 110px;padding: 60px 0 40px 0;}
+    .main-inner span{color: #F42020;font-family: Lato;font-size: 16px;font-style: normal;font-weight: 350;line-height: normal;}
+    .main-inner img{float: left;padding-top: 6px;width: 55px;}
+    .summer-wrap{width: 100%;padding-bottom: 40px;text-align: justify;}
+    .summer-wrap h1{color: #000;font-family: Lato;font-size: 36px;font-style: normal;font-weight: 350;line-height: normal;}
+    .summer-wrap span{color: #000;font-family: Lato;font-size: 42px;font-style: normal;font-weight: 500;line-height: 70px;}
+    .main-inner-active{float: left;width: 145px;}
+    .main-inner-active span{color: #000;font-family: Lato;font-size: 17px;font-style: normal;font-weight: 500;line-height: normal;}
+    .main-inner-active img{float: left;width: 93px;padding-top: 5px;}
+    .active{float: left;width: 100%;padding: 82px 0 90px 85px;}
+    .main-item{float:right;width: auto;}
+    .main-item img{float: left; width: 100%;}
+    .hot-list-wrap{float: left;width: 100%;background-color: white;padding: 45px 0;}
+    .hot-list-item{width: 100%;float: left;}
+    .hot-inner{float: left;width: 200px;padding: 180px 0 50px 0;margin-left: 12px;position: relative;z-index: 1;}
+    .hot-inner h5{font-size: 16px;font-weight: 400;}
+    .hot-inner h3{font-size: 18px;font-weight: 500;padding: 10px 0 12px 0;}
+    .hot-inner h3 span{font-weight: 350;}
+    .hot-inner img{float: left;padding-top: 5px;width: 65px;}
+    .hot-women{float:left;width: 170px;margin-left: 110px;position: absolute;}
+    .hot-women img{float: left;padding-top: 69px;z-index: 2;}
+    .hot-list-man{float: left; width: 100%;background-color: #D9D9D9;margin-top: 30px;margin-left: auto;}
+    .men-collection{float: left;width: 200px;padding: 75px 0 0 10px;}
+    .men-collection h5{font-size: 16px;font-weight: 400;}
+    .men-collection h3{font-size: 17px;font-weight: 500;padding: 11px 0 18px 0;}
+    .men-collection h3 span{font-size: 17px;font-weight: 350;}
+    .men-collection img{float: left;padding-top: 5px;width: 65px;}
+    .active-men{float: left;margin-left: 50px;}
+    .kids-collection-wrap{float: left;width: 100%;background-color: #D9D9D9;margin-top: 30px;margin-left: auto;}
+    .main-kids{float: left;width: 220px;padding-top: 131px;margin-left: 12px;position: relative;z-index: 2;}
+    .main-kids h5{color: #000;font-family: Inter;font-size: 17px;font-style: normal;font-weight: 400;line-height: normal;}
+    .main-kids h3{color: #000;font-family: Inter;font-size: 20px;font-style: normal;font-weight: 500;line-height: normal;padding: 10px 0 12px 0;}
+    .main-kids h3 span{font-weight: 350;}
+    .main-kids img{float: left;padding: 5px 0 30px 0;width: 65px;}
+    .kids-inner{float: right;position: absolute;width: 140px;margin-left: 140px;z-index: 1;}
+    .kids-inner img{width: 100%;float: left;}
+    .gift-cards-wrap{float: left;width: 100%;background-color: #FFEFEF;margin-top: 26px;}
+    .gift-inner{float: left;padding: 70px 0 0 22px;}
+    .main-trendy{float: left;width: 100%;padding-bottom: 25px;}
+    .main-trendy h2{text-align: center;font-size: 30px;font-style: normal;font-weight: 400;}
+    .trendy-wrap{width: 100%;float: left;position: relative;}
+    .trendy-wrap ul li{color: #000;font-family: Lato;font-size: 9px;font-style: normal;font-weight: 400;line-height: normal;margin-right: 20px;}
+    .new{ position: relative;}
+    .new::after{content: '';width: 50px;height: 2px;background-color: #000;position: absolute;left: 0;top: 15px;}
+    .products-item-wrap{width: 100%;display: flex;flex-flow: row wrap;justify-content: space-between;padding-top: 40px;}
+    .product-inner{float: left; width: 46.2%;}
+    .main-product-inner{float: left;width: 100%;background-color: #F3F3F3;}
+    .jaclet{float: left;padding: 15px 16px 0 29px;}
+    .t-shart{float: left;padding: 12px 12px 0 22px;}
+    .cort{float: left;padding: 9px 16px 0 33px;}
+    .calvin-shot{float: left;padding: 2px 15px 0 24px;}
+    .review-item{float: left; width:100%;position: relative;padding: 18px 0;}
+    .review-item h5{color: #000;font-family: Lato;font-size: 12px;font-style: normal;font-weight: 300;line-height: normal;}
+    .active-love{float: right;width: auto;margin-top: -10px;}
+    .review-item h3{font-size: 15px;font-weight: 500;padding: 5px 0;}
+    .review-item h4{color: #000;font-family: Lato;font-size: 13px;font-style: normal;font-weight: 500;}
+    .review-item h4 span{color: #F13636;margin-left: 17px;}
+    .review-star{float: left;padding: 10px 7px 0 0;}
+    .review-chake{color: #000;font-family: Lato;font-size: 10px;font-style: normal;font-weight: 400;line-height: normal;position: absolute;margin-top: 5px;margin-left: 7px;}
+    .price{position: relative;}
+    .price::before{content: '';width: 30px;height: 0.5px;background-color: #000;position: absolute;left: 0;top: 9px;}
+    .cotton-jacket{float: left;padding: 0;}
+    .jacket{float: left;padding: 8px 30px 0 31px;}
+    .tops{float: left;padding: 6px 13px 0 28px;}
+    .huddi{float: left;padding: 10px 21px 0 28px;}
+    .all-product h3::after{content: ""; width: 85px; height: 2px;background-color: #000;position: absolute;z-index: 1;top: 25px;left: 27.8%;}
+    .all-product{float: left;width: 100%;padding: 30px 0 60px 0;}
+    .collection-item{width: 100%;float: left;padding-top: 70px;}
+    .collection-item h5{font-size: 14px;font-weight: 400;margin-left: 27.7%;position: relative;}
+    .collection-item h2{font-size: 23px;font-style: normal;font-weight: 600;line-height: normal;padding: 15px 0;}
+    .collection-item h4{ font-size: 16px; font-style: normal; font-weight: 400; line-height: normal;position: relative;}
+    .collection-item h5::before{content: "";width: 50px;height: 2px;position: absolute;z-index: 1;background-color: #EF3B3B;top: 8px;left: -65px;border-radius: 3px;}
+    .collection-item h4::after{content: "";width: 55px;height: 2px;background-color: #000;position: absolute;top: 20px;left: 0;border-radius: 3px;}
+    .collection-time{width: 100%;float: left;padding-top: 50px;}
+    .time{float: left;width: 100%;}
+    .collection-time img{float: left;width: 100%;padding-top: 10px;}
+    .collection-inner{float: left;width:100%;}
+    .t-shirt-shop-item{width: 100%;padding-top: 50px;}
+    .shirt-shop-inner{float: left;width: 100%;background: #FF0021;}
+    .women-t-shirt{float: left;width: 190px;padding: 60px 0 30px 0;margin-left: 25px;}
+    .main-shop-inner{width: 100%;background: #ECECEC;margin-top: 30px;}
+    .men-t-shirt{float: left;width: 100%;padding: 60px 0 30px 0;margin-left: 25px;}
+    .limited-head{padding: 40px 0 25px 0;}
+    .limited-head h3{font-size: 26px;}
+    .limited-item{width: 46%;}
+    .leather-bag{padding: 27px 10px;}
+    .review-inner{padding: 13px 0;}
+    .brackcelet{padding: 20px 31px;}
+    .cap{padding: 39px 10px;}
+    .calvin-belt{padding: 30px 10px 39px 10px;}
+    .main-uomo-head{padding: 40px 0 25px 0;}
+    .main-uomo-head h3{font-size: 34px;}
+    .uomo-item{padding-bottom: 30px;}
+    .uomo-service-item{width: 100%;margin-top: 35px;}
+    .uomo-service-item h4{padding: 30px 0 10px 0;}
+    .footer-item{flex-wrap: wrap;flex-direction: column-reverse;justify-content: flex-end;align-items: flex-end;}
+    .footer-inner{width: 100%;margin-top: 30px;text-align: end;}
+    .company-inner{width: 100%;text-align: center;}
+    .company-inner ul{width: 100%;}
+    .shop-inner{width: 100%;text-align: center;}
+    .shop-inner ul{width: 100%;}
+    .help-inner{width: 100%;text-align: center;margin-top: 30px;}
+    .help-inner ul{width: 100%;}
+    .subscribe-inner{width: 100%;text-align: center;}
+    .join-email{float: left;margin-left: 36px;}
+    .sale-uomo{width: 100%;}
+}
+
+
+
+/*		Wide Mobile Layout: 480px.
+------------------------------------------------------------
+*/
+
+@media only screen and (min-width: 320px) and (max-width: 374px) {
+
+  
+
+}
+
+
+/*		Tablet Layout: 768px.
+-----------------------------------------------------------------
+*/
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    input[type="text"],input[type="email"],input[type="tel"],input[type="search"],input[type="number"],input[type="submit"],input[type="password"],select,textarea{-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+    
+   .mobi{display: block;}
+   .desk{display: none;}
+   .logo-wrap{margin-right: 20px;}
+   .main-nav-and-icon-wrap{float: left; width: calc(100% - 225px);}
+   .nav-wrap{float: left;width: calc(100% - 225px);margin-top: 30px;}
+   .nav-wrap ul{display: flex;flex-wrap: nowrap; padding: 10px 0;margin-top: 30px;justify-content: space-around;}
+   .nav-wrap ul li a{font-size: 14px;font-weight: 400;}
+   .icon-wrap{width: 225px;display: flex;flex-flow: row;justify-content: space-between;padding-top: 14px;}
+   .hero-inner{width: 100%;}
+   .summer-wrap{padding-bottom: 40px;}
+   .main-inner{padding: 100px 0 50px 0;}
+   .summer-wrap h1{font-size: 40px;}
+   .summer-wrap span{font-size: 50px;}
+   .active{padding: 65px 0 90px 0;}
+   .hot-list-wrap{padding: 50px 0;}
+   .hot-list-item{width: 100%;}
+   .hot-inner{padding: 300px 0 80px 0;width: 300px;}
+   .hot-inner h3{font-size: 28px;}
+   .hot-women{float: left;position: absolute;width: 290px;margin-left: 150px;}
+    .hot-list-man{width: 100%;margin-top: 30px;margin-left: auto;}
+    .men-collection{padding: 70px 0 0 12px;}
+    .active-men{float: right;width: auto;}
+    .kids-collection-wrap{float: left;width: 100%;margin-top: 30px;margin-left: 0;}
+    .main-kids{width: 100%;}
+    .main-kids h3{font-size: 40px;}
+    .kids-inner{width: 162px;margin-left: 275px;}
+    .gift-cards-wrap{width: 100%;}
+    .gift-inner{padding: 100px 0 0 22px;}
+    .gift-inner p{font-size: 17px; font-weight: 400;}
+    .main-trendy h2{font-size: 32px;}
+    .product-inner{width: 46.2%;}
+    .review-item{padding: 18px 0 15px 0;}
+    .jacket{padding: 9px 40px 0 54px;}
+    .huddi{padding: 10px 21px 0 32px;}
+    .all-product{padding: 40px 0 55px 0;}
+    .all-product h3{font-size: 24px;}
+    .all-product h3::after{width: 130px;top: 34px;left: 27%;}
+    .collection-wrap{width: 100%;}
+    .collection-item{width: 100%;padding-top: 100px;}
+    .collection-item h5{margin-left: 17.7%;}
+    .collection-time{padding-top: 55px;}
+    .collection-inner{width: 100%;}
+    .collection-inner img{padding: 55px 60px 35px 60px;}
+    .shirt-shop-inner{width: 100%;margin-bottom: 30px;}
+    .women-t-shirt{padding: 85px 0 40px 0;}
+    .main-shop-inner{width: 100%;}
+    .men-t-shirt{padding: 85px 0 40px 0;}
+    .limited-item{width: 46.2%;}
+    .brackcelet{padding: 30px 31px 30px 38px;}
+    .calvin-belt{padding: 75px 10px 80px 10px;}
+    .review-inner{padding-bottom: 15px;}
+    .uomo-service-item{width: 100%;margin-bottom: 40px;}
+    .uomo-service-item img{display: block;margin: 0 auto;padding: 0;}
+    .uomo-service{padding: 40px 0 50px 0;}
+    .footer-inner{width: 45%;}
+    .company-inner{width: 35%;}
+    .shop-inner{width: 23%;margin-top: 40px;}
+    .help-inner{width: 23%;margin-top: 40px;}
+    .subscribe-inner{width: 49%;margin-top: 40px;}
+    
+
+}
+
+
+/*		Tablet Layout: 1024px.
+-----------------------------------------------------------------
+*/
+
+@media only screen and (min-width: 769px) and (max-width: 991px) {
+    input[type="text"],input[type="email"],input[type="tel"],input[type="search"],input[type="number"],input[type="submit"],input[type="password"],select,textarea{-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+    .mobi{display: block;}
+    .desk{display: none;}
+    .nav-wrap{width: auto;margin: auto;margin-top: -24px;margin-left: 25px;}
+   .nav-wrap ul{display: flex;flex-wrap: nowrap; padding: 10px 0;margin-top: 30px;justify-content: space-around;}
+   .nav-wrap ul li{margin-left: 13px;}
+   .nav-wrap ul li a{font-size: 16px;font-weight: 400;}
+   .icon-wrap{float: right;width: inherit;padding-bottom: 15px;}
+   .hero-item-wrap{display: flex;flex-flow: row;}
+   .main-item{padding-top: 45%;}
+   .summer-wrap h1{font-size: 35px;font-weight: 600;}
+   .summer-wrap span{font-size: 50px;font-weight: 700;}
+   .hot-list-item{width: 46%;}
+   .hot-inner{padding: 282px 0 93px 0;width: 255px;}
+   .hot-inner h3{font-size: 24px;}
+   .hero-inner{padding: 250px 0 70px 0;}
+   .hot-women{width: 278px;margin-left: 55px;padding-top: 8px;}
+   .kids-collection-wrap{width: 46%;margin: 30px 26px 0 0;}
+   .kids-inner{margin-left: 177px;}
+   .gift-cards-wrap{margin-top: 30px;width: 48.8%;}
+   .gift-inner{padding-bottom: 13px;}
+    .trendy-wrap ul li{font-size: 16px;}
+    .trendy-wrap ul li::after{width: 75px;top: 22px;}
+    .jaclet{float: left;padding: 5px 16px 0 20px;}
+    .cort{padding: 9px 11px 0 28px;}
+    .calvin-shot{padding: 10px 12px 0 20px;}
+    .jacket{padding: 10px 30px 0 46px;}
+    .tops{padding: 7px 10px 0 15px;}
+    .huddi{padding: 10px 14px 0 20px;}
+    .all-product h3{font-size: 35px;font-weight: 500;}
+    .all-product h3::after{width: 192px;top: 43px;left: 30%;}
+    .collection-wrap{width: 100%;}
+    .collection-item h5{margin-left: 25.7%;}
+    .collection-item h2{font-size: 29px;font-weight: 700px;}
+    .collection-item h2 span{font-weight: 500px;}
+    .collection-inner img{padding: 35px 35px 34px 93px;}
+    .collection-time img{width: auto;}
+    .women-t-shirt{padding: 100px 0 50px 0;}
+    .men-t-shirt{padding: 100px 0 50px 0;}
+    .leather-bag{padding: 65px 15px 65px 15px;}
+    .brackcelet{padding: 30px 20px 30px 30px;}
+    .cap{padding: 80px 22px 87px 24px;}
+    .calvin-belt{padding: 70px 12px;}
+    .company-inner{width: 12.3%;}
+    .shop-inner{width: 12.3%;}
+    .help-inner{width: 13.3%;}
+    .join-email span{padding: 6px 0 7px 8px;}
+    .join-email h4{padding: 6px 13px 5px 17px;}
+}
+
+
+@media only screen and (min-width: 992px) and (max-width: 1024px) {
+    input[type="text"],input[type="email"],input[type="tel"],input[type="search"],input[type="number"],input[type="submit"],input[type="password"],select,textarea{-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+    .nav-wrap ul{margin-right: 30px;}
+    .hero-item-wrap{display: flex;align-items: flex-end;}
+    .active{padding: 70px 0 90px 0;}
+    .summer-wrap h1{font-size: 47px;}
+    .summer-wrap span{font-size: 55px;}
+    .hot-list-item{width: 48%;}
+    .hot-inner{width: 270px;padding: 265px 0 110px 0;}
+    .hot-inner h3{font-size: 25px;}
+    .hot-women{position: absolute;width: 28.5%;margin-left: 17.5%;}
+    .kids-collection-wrap{float: left;margin: 30px 26px 0 0;width: 48%}
+    .main-kids{width: 340px;}
+    .main-kids h3{font-size: 32px;letter-spacing: 3px;}
+    .kids-inner{position: absolute;margin-left: 30%;width: 158px;}
+    .gift-cards-wrap{margin-top: 30px;width: 48.5%}
+    .gift-inner{width: 100%;}
+    .gift-inner h3{font-size: 26px;font-weight: 600;}
+    .gift-inner p{font-size: 19px;font-weight: 400;}
+    .t-shart{padding: 15px 12px 0 24px;}
+    .jacket{padding: 9px 40px 0 61px;}
+    .cotton-jacket{padding: 0px 6px 0 0px;}
+    .tops{padding: 6px 13px 0 22px;}
+    .huddi{padding: 10px 20px 0 27px;}
+    .collection-wrap h2{font-size: 32px;}
+    .collection-wrap h5{margin-left: 23.7%;}
+    .collection-time{padding-top: 130px;}
+    .collection-inner img{padding: 50px 0 40px 0;}
+    .women-t-shirt{padding: 100px 0 50px 0;}
+    .men-t-shirt{padding: 100px 0 50px 0;}
+    .leather-bag{padding: 76px 16px 69px 20px;}
+    .brackcelet{padding: 32px 30px 30px 40px;}
+    .cap{padding: 97px 22px 90px 28px;}
+    .calvin-belt{padding: 75px 11px 80px 11px;}
+    .uomo-service-item{width: 30%;}
+    .help-inner{width: 10.3%;}
+    .subscribe-inner{width: 23.4%;}
+    .footer-inner{width: 24%;}
+}
